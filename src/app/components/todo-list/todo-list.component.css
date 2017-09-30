@@ -1,0 +1,22 @@
+.container{
+  margin-top: 20px;
+}
+
+#current-date{
+  padding: 10px;
+  /* background-color: #ccc; */
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+#add-todo-list{
+  width: 100%;
+  margin-bottom: 20px;
+  color: white; 
+}
+
+.ngx-datepicker-input{
+  width: 100px;
+  border-radius: 3px;
+  border: 1px solid #eee;
+}

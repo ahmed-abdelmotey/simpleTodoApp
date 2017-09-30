@@ -1,0 +1,46 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="todolist">
+                <h1>Todos</h1>
+                <input type="text" class="form-control add-todo" placeholder="Add todo" (keyup.enter)="addTask($event)">
+                <button class="btn btn-success" style="margin-top:10px" (click)="markAllDone()">
+                        <span class="glyphicon glyphicon glyphicon-ok-sign"></span> All Done</button>
+                <button class="btn btn-danger" style="margin-top:10px" (click)="markAllUnDone()">
+                        <span class="glyphicon glyphicon glyphicon-remove-sign"></span> All Not Done</button>
+                    
+                    <hr>
+                    <ul class="list-unstyled" class="list-group">
+                    <li *ngFor="let task of todo.Tasks" [ngClass]="{'list-group-item':true}" (dblclick)="editRow(task.Id)">
+                        <span [ngClass]="{'strike':task.isDone}">{{task.Name}}</span> 
+
+                        <!-- remove task -->
+                        <button *ngIf="task.isDone" class="btn btn-default btn-xs pull-right btn-danger" (click)="removeTask($event , task.Id)">
+                                <span class="glyphicon glyphicon-trash"></span>
+                        </button>
+
+                        <!-- toggle task isDone -->
+                        <button class="btn btn-default btn-xs pull-right" 
+                        [ngClass]="{ 'btn-warning': task.isDone, 'btn-success': !task.isDone }"
+                        (click)="toggleDone($event , task.Id)">
+                            <span [ngClass]="{ 'glyphicon' : true,'glyphicon-remove': task.isDone, 'glyphicon-ok': !task.isDone }"></span>
+                        </button>
+                   
+                    </li>
+                </ul>
+                <div class="todo-footer">
+                    <strong><span class="count-todos"></span></strong> Items Left {{todo.Tasks.length}}
+                </div>
+                <div class="action-panel">
+                    <a [routerLink]="['/todo']" class="btn btn-primary">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                        Back</a>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+
+
+
+  

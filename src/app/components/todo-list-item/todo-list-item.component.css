@@ -1,0 +1,58 @@
+*{
+  -webkit-transition: all 0.3s ease-in;
+  -moz-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+
+.todolist{
+  background-color:#FFF;
+  padding:20px 20px 10px 20px;
+  margin-top:30px;
+}
+.todolist h1{
+  margin:0;
+  padding-bottom:20px;
+  text-align:center;
+}
+
+/* li{
+  background:#fff;
+  border:none;
+  padding:10px;
+  border-bottom:1px solid #ddd;
+}
+li:last-child{
+  border-bottom:none;
+} */
+
+li button{
+  /* visibility: hidden; */
+  display: none;
+  margin-right: 5px;
+}
+
+li:hover{
+  background-color: #eee;
+}
+li:hover button{
+  /* visibility: visible; */
+  display: inline;
+}
+
+.todo-footer{
+  background-color:#F4FCE8;
+  margin:0 -20px -10px -20px;
+  padding: 10px 20px;
+}
+
+.strike{
+  text-decoration: line-through;
+}
+
+.action-panel{
+  margin-top: 20px;
+  
+}
+.red{
+  background-color: blue;
+}
