@@ -29,7 +29,7 @@
         </div>
         <div class="row" style="margin-top:10px;">
           <div class="col-md-12 text-right">
-            <button (click)="addTodoList()" class="btn" [ngClass]="{'btn-success': todoName}">Add Todo</button>
+            <button (click)="addTodoList()" class="btn" [ngClass]="{'btn-success': todoName,'disabled': !todoName }">Add Todo</button>
           </div>
         </div>
       </app-dialogue>

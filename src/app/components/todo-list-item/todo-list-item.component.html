@@ -12,7 +12,7 @@
                     <hr>
                     <ul class="list-unstyled" class="list-group">
                     <li *ngFor="let task of todo.Tasks" [ngClass]="{'list-group-item':true}" (dblclick)="editRow(task.Id)">
-                        <span [ngClass]="{'strike':task.isDone}">{{task.Name}}</span> 
+                        <span [ngClass]="{'strike':task.isDone}">{{task.Id}} {{task.Name}}</span> 
 
                         <!-- remove task -->
                         <button *ngIf="task.isDone" class="btn btn-default btn-xs pull-right btn-danger" (click)="removeTask($event , task.Id)">

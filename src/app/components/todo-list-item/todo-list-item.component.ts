@@ -7,7 +7,7 @@ import { ITodoList } from "../../services/todos-lists/todo-list";
 @Component({
   selector: 'app-todo-list-item',
   templateUrl: './todo-list-item.component.html',
-  styleUrls: ['./todo-list-item.component.css']
+  styleUrls: ['./todo-list-item.component.css'],
 })
 
 export class TodoListItemComponent implements OnInit {
@@ -27,7 +27,12 @@ export class TodoListItemComponent implements OnInit {
 
   addTask(evt){
     if(evt.target.value){
-      this.todo.Tasks.unshift({Id: Math.max.apply(Math,this.todo.Tasks.map(function(o){return o.Id;})) + 1,Name:evt.target.value, isDone:false})
+
+      let taskId = this.todo.Tasks.length > 0 ? Math.max.apply(Math,this.todo.Tasks.map(function(o){return o.Id;})) + 1 : 0;
+      this.todo.Tasks.unshift({
+        Id: taskId,
+        Name:evt.target.value,
+        isDone:false})
       evt.target.value = '';
     }
   }
